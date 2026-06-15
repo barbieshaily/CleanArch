@@ -1,5 +1,6 @@
 using CleanArch.Data;
 using CleanArch.Infra.Data.Context;
+using CleanArch.Infra.IoC;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,6 +18,9 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 builder.Services.AddDbContext<UniversityDBContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("UniversityDBConnection") ?? throw new InvalidOperationException("Connection string 'UniversityDBConnection' not found.")));
 builder.Services.AddControllersWithViews();
+
+// call your DI registrar // option A: call your container directly
+DependencyContainer.RegisterServices(builder.Services);
 
 var app = builder.Build();
 
