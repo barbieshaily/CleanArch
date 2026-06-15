@@ -18,11 +18,24 @@
 
   <ItemGroup>
     <Folder Include="Data\Migrations\" />
+    <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\CleanArch.Infra.Data\CleanArch.Infra.Data.csproj" />
     <ProjectReference Include="..\CleanArch.Infra.IoC\CleanArch.Infra.IoC.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\images\art-ball-shaped-circle-414860.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\images\blue-bubble-crystal-clear-132477.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\images\book-education-graphing-paper-167682.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
