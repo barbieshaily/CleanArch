@@ -1,5 +1,7 @@
 <Solution>
-  <Folder Name="/Application/" />
+  <Folder Name="/Application/">
+    <Project Path="../CleanArch.Application/CleanArch.Application.csproj" Id="8b756ccd-76ca-4037-a6db-4ca4657c4a48" />
+  </Folder>
   <Folder Name="/Domain/">
     <Project Path="../CleanArch.Domain/CleanArch.Domain.csproj" Id="9a1300d6-ced1-4083-b5f2-013cdff76f85" />
   </Folder>
