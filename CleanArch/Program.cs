@@ -19,6 +19,7 @@ builder.Services.AddDbContext<UniversityDBContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("UniversityDBConnection") ?? throw new InvalidOperationException("Connection string 'UniversityDBConnection' not found.")));
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining(typeof(Program)));
 // call your DI registrar // option A: call your container directly
 DependencyContainer.RegisterServices(builder.Services);
 
