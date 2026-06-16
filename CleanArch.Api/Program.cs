@@ -1,3 +1,5 @@
+using CleanArch.Api.Configurations;
+using CleanArch.Application.AutoMapper;
 using CleanArch.Infra.Data.Context;
 using CleanArch.Infra.IoC;
 using Microsoft.EntityFrameworkCore;
@@ -19,7 +21,7 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "University Api", Version = "v1" });  
 });
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining(typeof(Program)));
-
+builder.Services.RegisterAutoMapper();
 
 // call your DI registrar // option A: call your container directly
 DependencyContainer.RegisterServices(builder.Services);

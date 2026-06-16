@@ -1,6 +1,7 @@
 using CleanArch.Data;
 using CleanArch.Infra.Data.Context;
 using CleanArch.Infra.IoC;
+using CleanArch.Mvc.Configurations;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,6 +21,9 @@ builder.Services.AddDbContext<UniversityDBContext>(options =>
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining(typeof(Program)));
+
+// register AutoMapper profiles
+builder.Services.RegisterAutoMapper();
 // call your DI registrar // option A: call your container directly
 DependencyContainer.RegisterServices(builder.Services);
 
